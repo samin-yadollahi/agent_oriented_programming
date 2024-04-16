@@ -1,4 +1,6 @@
 import mesa
+import random
+
 from src.computation_agent import ComputationAgent
 
 
@@ -9,4 +11,5 @@ class AgentModel(mesa.Model):
 
 
         for i in range(self.agents_numbers):
-            agent = ComputationAgent()
+            unique_id = random.randint(1, 99)
+            agent = ComputationAgent(i, self)
