@@ -3,12 +3,11 @@ from src.agent_model import AgentModel
 
 def main():
 
-    # number_of_agents = int(input("please the number of agents: "))
+    number_of_agents = int(input("please the number of agents: "))
     
-    agent = AgentModel()
-
-   
-    
+    agent = AgentModel(number_of_agents)
+    agent.step()
 
 
-main()
+if __name__ == "__main__":
+    main()

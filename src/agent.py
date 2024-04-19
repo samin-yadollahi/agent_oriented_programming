@@ -1,24 +1,26 @@
 import mesa
-
+import random
 
 class Agent(mesa.Agent):
 
-    def __init__(self, unique_id, model):
+    def __init__(self, unique_id, model, num_1=2, num_2=2, ops="+"):
         super().__init__(unique_id, model)
+        
+        self.num_1 = num_1
+        self.num_2 = num_2
+        self.ops = ops
+        self.result = 0
 
 
     def step(self):
-        print(f"Hi! I'm agent number {str(self.unique_id)}.")
+
+        if (self.ops == '+'):
+            other_agent = self.random.choice(self.model.schedule.agents)
+
+            if other_agent is not None:
+                other_agent.result = self.num_1 + self.num_2
+
+        print(f"Hi! I'm agent number {str(self.unique_id)} and the result is {other_agent.result}.")
 
 
-    def add_numbers(self, num1, num2):
-        return num1+num2
-    
-
-    def deffirence(self, num1, num2):
-        return num1-num2
-    
-
-    def multiply(self, num1, num2):
-        return num1*num2
     
