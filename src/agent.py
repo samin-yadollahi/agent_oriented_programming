@@ -7,6 +7,10 @@ class Agent(mesa.Agent):
         super().__init__(unique_id, model)
 
 
+    def step(self):
+        print(f"Hi! I'm agent number {str(self.unique_id)}.")
+
+
     def add_numbers(self, num1, num2):
         return num1+num2
     
